@@ -1,0 +1,39 @@
+body,
+html,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+}
+
+.model-list {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px;
+  border-radius: 4px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.model-list button {
+  border: none;
+  padding: 6px 12px;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.model-list button.selected {
+  background: #333;
+  color: white;
+}
