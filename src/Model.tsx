@@ -15,7 +15,7 @@ interface ModelProps {
   showAnchors?: boolean;
   color?: ColorRepresentation;
   offset?: Vector3;
-  rotate?: Vector3; // rotation in radians
+  rotate?: Vector3;
 }
 
 export default function Model({
