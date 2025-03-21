@@ -15,13 +15,13 @@ canvas {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 8px;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 5px;
   z-index: 10;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .model-list button {
@@ -29,11 +29,12 @@ canvas {
   padding: 6px 12px;
   background: #eee;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 4px;
   font-weight: bold;
+  transition: 0.2s ease;
 }
 
 .model-list button.selected {
-  background: #333;
+  background: hotpink;
   color: white;
 }
