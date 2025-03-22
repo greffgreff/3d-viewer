@@ -1,3 +1,5 @@
+import type { Model as ModelType } from "./types/3d";
+import { useEffect, useRef, ReactNode, useMemo } from "react";
 import { useGLTF } from "@react-three/drei";
 import {
   Group,
@@ -7,40 +9,50 @@ import {
   Mesh,
   Euler,
 } from "three";
-import { useEffect, useRef } from "react";
+import { SkeletonUtils } from "three-stdlib";
 
 interface ModelProps {
-  path: string;
-  anchors: Vector3[];
+  model: ModelType;
   showAnchors?: boolean;
   color?: ColorRepresentation;
   offset?: Vector3;
   rotate?: Vector3;
+  children?: ReactNode;
 }
 
 export default function Model({
-  path,
-  anchors,
+  model,
   showAnchors = false,
   color = "#ffffff",
   offset = new Vector3(0, 0, 0),
   rotate = new Vector3(0, 0, 0),
+  children,
 }: ModelProps) {
-  const { scene } = useGLTF(`/models/${path}`);
+  const { scene } = useGLTF(model.path);
+
+  // Deep clone scene
+  const clonedScene = useMemo(() => SkeletonUtils.clone(scene), [scene]);
+
   const modelRef = useRef<Group>(null);
 
   useEffect(() => {
-    if (!scene) return;
+    if (!clonedScene) return;
 
-    scene.traverse((obj) => {
-      if (obj.type === "Mesh") {
+    clonedScene.traverse((obj) => {
+      if (obj instanceof Mesh) {
         const mesh = obj as Mesh;
-        if (mesh.material && "color" in mesh.material) {
+
+        // Clone the material to avoid sharing
+        if (mesh.material) {
+          mesh.material = mesh.material.clone();
+        }
+
+        if ("color" in mesh.material) {
           (mesh.material as MeshStandardMaterial).color.set(color);
         }
       }
     });
-  }, [scene, color]);
+  }, [clonedScene, color]);
 
   return (
     <group
@@ -48,15 +60,15 @@ export default function Model({
       position={offset}
       rotation={new Euler(rotate.x, rotate.y, rotate.z)}
     >
-      <primitive object={scene} scale={1} />
-
+      <primitive object={clonedScene} scale={1} />
       {showAnchors &&
-        anchors.map((pos, idx) => (
-          <mesh key={idx} position={pos}>
+        model.anchors.map((anchor, idx) => (
+          <mesh key={idx} position={anchor.point}>
             <sphereGeometry args={[1, 16, 16]} />
             <meshBasicMaterial color="aqua" />
           </mesh>
         ))}
+      {children}
     </group>
   );
 }

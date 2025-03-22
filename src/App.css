@@ -5,6 +5,7 @@ html,
   padding: 0;
   height: 100%;
   overflow: hidden;
+  background-color: grey;
 }
 
 canvas {

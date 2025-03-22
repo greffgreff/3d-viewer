@@ -1,61 +1,50 @@
+import type { Model as ModelType } from "./types/3d";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { useState, useEffect, Suspense } from "react";
+import { useEffect, Suspense } from "react";
 import { Vector3 } from "three";
-import "./App.css";
 import Model from "./Model";
+import rawModels from "./assets/models.json";
+import "./App.css";
 
-interface ModelData {
-  path: string;
-  anchors: Vector3[];
-}
+// @ts-ignore
+const MODELS: ModelType[] = rawModels.map((model) => ({
+  ...model,
+  anchors: model.anchors.map((anchor) => ({
+    ...anchor,
+    point: new Vector3(...(anchor.point as [number, number, number])),
+  })),
+}));
 
 export default function App() {
-  const [models, setModels] = useState<ModelData[]>([]);
-  const [selectedModel, setSelectedModel] = useState<ModelData | null>(null);
-
   useEffect(() => {
-    fetch("/anchors.json")
-      .then((res) => res.json())
-      .then((data: ModelData[]) => {
-        data.forEach((model) => useGLTF.preload(`/models/${model.path}`));
-        setModels(data);
-        setSelectedModel(data[0]);
-      });
+    MODELS.forEach((model) => useGLTF.preload(model.path));
   }, []);
 
+  const panel = MODELS.find((m) => m.name.toLowerCase() === "back_panel")!;
+  const leg = MODELS.find((m) => m.name.toLowerCase() === "leg")!;
+
+  const leftLegOffset = new Vector3().subVectors(
+    panel.anchors.find((a) => a.name === "bottom_left")!.point,
+    leg.anchors.find((a) => a.name === "back_panel")!.point
+  );
+  const rightLegOffset = new Vector3().subVectors(
+    panel.anchors.find((a) => a.name === "bottom_right")!.point,
+    leg.anchors.find((a) => a.name === "back_panel")!.point
+  );
+
   return (
-    <>
-      <div className="model-list">
-        {models.map((model) => (
-          <button
-            key={model.path}
-            className={model.path === selectedModel?.path ? "selected" : ""}
-            onClick={() => setSelectedModel(model)}
-          >
-            {model.path.replace(".glb", "").replace(".gltf", "")}
-          </button>
-        ))}
-      </div>
+    <Canvas camera={{ position: [0, 75, 150], fov: 45 }}>
+      <ambientLight intensity={5} />
+      <directionalLight intensity={2} position={[5, 0, 5]} />
 
-      <Canvas camera={{ position: [0, 0, 150], fov: 45 }}>
-        <ambientLight intensity={5} />
-        <directionalLight intensity={2} position={[5, 5, 5]} />
+      <Suspense fallback={null}>
+        <Model model={panel} />
+        <Model model={leg} offset={leftLegOffset} color="orange" />
+        <Model model={leg} offset={rightLegOffset} color="pink" />
+      </Suspense>
 
-        <Suspense fallback={null}>
-          {selectedModel && (
-            <Model
-              color="white"
-              key={selectedModel.path}
-              path={selectedModel.path}
-              anchors={selectedModel.anchors}
-              showAnchors
-            />
-          )}
-        </Suspense>
-
-        <OrbitControls />
-      </Canvas>
-    </>
+      <OrbitControls />
+    </Canvas>
   );
 }

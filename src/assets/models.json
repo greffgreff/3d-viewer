@@ -1,0 +1,35 @@
+[
+  {
+    "name": "leg",
+    "path": "/models/voet_47.gltf",
+    "anchors": [
+      {
+        "name": "back_panel",
+        "point": [0, 1, -23.5],
+        "targets": ["back_panel/bottom_left"]
+      }
+    ]
+  },
+  {
+    "name": "back_panel",
+    "path": "/models/achterwand_glad_47.gltf",
+    "anchors": [
+      {
+        "name": "bottom_left",
+        "point": [50, 0, 0]
+      },
+      {
+        "name": "bottom_right",
+        "point": [-50, 0, 0]
+      },
+      {
+        "name": "top_left",
+        "point": [50, 40, 0]
+      },
+      {
+        "name": "top_right",
+        "point": [-50, 40, 0]
+      }
+    ]
+  }
+]
