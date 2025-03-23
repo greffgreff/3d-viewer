@@ -1,13 +1,8 @@
 import { Vector3 } from "three";
 
-export interface Anchor {
-  name: string;
-  targets?: `${string}/${string}`[];
-  point: Vector3;
+export interface NamedModel {
+  path: string;
+  anchors: Record<string, Vector3>;
 }
 
-export interface Model {
-  name: string;
-  path: string;
-  anchors: Anchor[];
-}
+export type ModelMap = Record<string, NamedModel>;

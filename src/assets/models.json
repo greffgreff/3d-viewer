@@ -1,35 +1,80 @@
-[
-  {
-    "name": "leg",
+{
+  "leg": {
     "path": "/models/voet_47.gltf",
-    "anchors": [
-      {
-        "name": "back_panel",
-        "point": [0, 1, -23.5],
-        "targets": ["back_panel/bottom_left"]
-      }
-    ]
+    "anchors": {
+      "stand": [0, 1, 23.5]
+    }
   },
-  {
-    "name": "back_panel",
+  "back_panel": {
     "path": "/models/achterwand_glad_47.gltf",
-    "anchors": [
-      {
-        "name": "bottom_left",
-        "point": [50, 0, 0]
-      },
-      {
-        "name": "bottom_right",
-        "point": [-50, 0, 0]
-      },
-      {
-        "name": "top_left",
-        "point": [50, 40, 0]
-      },
-      {
-        "name": "top_right",
-        "point": [-50, 40, 0]
-      }
-    ]
+    "anchors": {
+      "bottom_left": [50, 0, 0],
+      "bottom_right": [-50, 0, 0],
+      "top_left": [50, 40, 0],
+      "top_right": [-50, 40, 0]
+    }
+  },
+  "stand": {
+    "path": "/models/staander_2010.gltf",
+    "anchors": {
+      "leg": [0, 0, -3],
+      "console_49": [0, 207.2, 0],
+      "console_48": [0, 203.2, 0],
+      "console_47": [0, 199.2, 0],
+      "console_46": [0, 195.2, 0],
+      "console_45": [0, 191.2, 0],
+      "console_44": [0, 187.2, 0],
+      "console_43": [0, 183.2, 0],
+      "console_42": [0, 179.2, 0],
+      "console_41": [0, 175.2, 0],
+      "console_40": [0, 171.2, 0],
+      "console_39": [0, 167.2, 0],
+      "console_38": [0, 163.2, 0],
+      "console_37": [0, 159.2, 0],
+      "console_36": [0, 155.2, 0],
+      "console_35": [0, 151.2, 0],
+      "console_34": [0, 147.2, 0],
+      "console_33": [0, 143.2, 0],
+      "console_32": [0, 139.2, 0],
+      "console_31": [0, 135.2, 0],
+      "console_30": [0, 131.2, 0],
+      "console_29": [0, 127.2, 0],
+      "console_28": [0, 123.2, 0],
+      "console_27": [0, 119.2, 0],
+      "console_26": [0, 115.2, 0],
+      "console_25": [0, 111.2, 0],
+      "console_24": [0, 107.2, 0],
+      "console_23": [0, 103.2, 0],
+      "console_22": [0, 99.2, 0],
+      "console_21": [0, 95.2, 0],
+      "console_20": [0, 91.2, 0],
+      "console_19": [0, 87.2, 0],
+      "console_18": [0, 83.2, 0],
+      "console_17": [0, 79.2, 0],
+      "console_16": [0, 75.2, 0],
+      "console_15": [0, 71.2, 0],
+      "console_14": [0, 67.2, 0],
+      "console_13": [0, 63.2, 0],
+      "console_12": [0, 59.2, 0],
+      "console_11": [0, 55.2, 0],
+      "console_10": [0, 51.2, 0],
+      "console_9": [0, 47.2, 0],
+      "console_8": [0, 43.2, 0],
+      "console_7": [0, 39.2, 0],
+      "console_6": [0, 35.2, 0],
+      "console_5": [0, 31.2, 0],
+      "console_4": [0, 27.2, 0],
+      "console_3": [0, 23.2, 0],
+      "console_2": [0, 19.2, 0],
+      "console_1": [0, 15.2, 0],
+      "console_0": [0, 11.2, 0],
+      "bottom_back_panel": [0, 0.1, 3]
+    }
+  },
+  "console": {
+    "path": "/models/console_37.gltf",
+    "anchors": {
+      "stand": [0, 8.8, 23.6]
+    }
   }
-]
+}
