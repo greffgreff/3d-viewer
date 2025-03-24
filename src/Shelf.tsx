@@ -11,7 +11,7 @@ interface ShelfProps {
   offset?: Vector3;
 }
 
-export default function Shelf({ levels, color, offset }: ShelfProps) {
+export default function Shelf({ levels, color }: ShelfProps) {
   useEffect(() => {
     Object.values(MODELS).forEach((model) => useGLTF.preload(model.path));
   }, []);
