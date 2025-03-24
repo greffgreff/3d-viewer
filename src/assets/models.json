@@ -68,7 +68,7 @@
       "console_2": [0, 19.2, 0],
       "console_1": [0, 15.2, 0],
       "console_0": [0, 11.2, 0],
-      "bottom_back_panel": [0, 0.1, 3]
+      "bottom_back_panel": [0, 10, 3]
     }
   },
   "console": {

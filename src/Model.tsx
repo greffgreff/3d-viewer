@@ -1,3 +1,4 @@
+import { useEffect, useRef, useMemo } from "react";
 import { useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import {
@@ -10,7 +11,6 @@ import {
   Material,
 } from "three";
 import { SkeletonUtils } from "three-stdlib";
-import { useEffect, useRef, ReactNode, useMemo } from "react";
 import type { NamedModel } from "./types/3d";
 
 interface ModelProps {
@@ -20,7 +20,6 @@ interface ModelProps {
   hoverColor?: ColorRepresentation;
   offset?: Vector3;
   rotate?: Vector3;
-  children?: ReactNode;
 }
 
 export default function Model({
@@ -30,7 +29,6 @@ export default function Model({
   hoverColor = "#ffcc00",
   offset = new Vector3(0, 0, 0),
   rotate = new Vector3(0, 0, 0),
-  children,
 }: ModelProps) {
   const { scene } = useGLTF(model.path);
   const clonedScene = useMemo(() => SkeletonUtils.clone(scene), [scene]);
@@ -82,8 +80,6 @@ export default function Model({
             <meshBasicMaterial color="aqua" />
           </mesh>
         ))}
-
-      {children}
     </group>
   );
 }
