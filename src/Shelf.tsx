@@ -144,7 +144,7 @@ export default function Shelf({ levelCount, color }: ShelfProps) {
         ))}
 
         {/* Base boards */}
-        <Model model={baseBoardPart} offset={backBaseBoard} />
+        {/* <Model model={baseBoardPart} offset={backBaseBoard} /> */}
 
         {/* Levels */}
         {levelOffset.map((offset, i) => (
