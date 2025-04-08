@@ -116,7 +116,7 @@ export default function Shelf({ levelCount, color }: ShelfProps) {
   );
 
   return (
-    <Canvas orthographic camera={{ position: [0, 75, 150], zoom: 50 }}>
+    <Canvas orthographic camera={{ position: [45, 100, -150], zoom: 2 }}>
       <ambientLight intensity={5} />
       <directionalLight intensity={4} position={[5, 10, 10]} />
       <directionalLight intensity={4} position={[5, 10, -10]} />
