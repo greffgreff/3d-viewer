@@ -20,7 +20,7 @@ export default function Shelf({ levelCount, color }: ShelfProps) {
   const standPart = MODELS["stand"];
   const legPart = MODELS["leg"];
   const consolePart = MODELS["console"];
-  const baseBoardPart = MODELS["base_board"];
+  // const baseBoardPart = MODELS["base_board"];
   const levelPart = MODELS["level"];
 
   // Panels
@@ -96,13 +96,13 @@ export default function Shelf({ levelCount, color }: ShelfProps) {
   );
 
   // Base boards
-  const backBaseBoard = new Vector3().addVectors(
-    rightStandOffset,
-    new Vector3().addVectors(
-      baseBoardPart.anchors["bottom_left"],
-      standPart.anchors["bottom_base_board"]
-    )
-  );
+  // const backBaseBoard = new Vector3().addVectors(
+  //   rightStandOffset,
+  //   new Vector3().addVectors(
+  //     baseBoardPart.anchors["bottom_left"],
+  //     standPart.anchors["bottom_base_board"]
+  //   )
+  // );
 
   // Levels
   const levelOffset = leftConsoleOffsets.map(({ offset, consolePart }) =>
