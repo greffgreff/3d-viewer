@@ -137,22 +137,10 @@ export default function Shelf({ levelCount, color }: ShelfProps) {
 
         {/* Consoles */}
         {leftConsoleOffsets.map(({ offset }, i) => (
-          <Model
-            key={i}
-            model={consolePart}
-            offset={offset}
-            color={color}
-            showAnchors
-          />
+          <Model key={i} model={consolePart} offset={offset} color={color} />
         ))}
         {rightConsoleOffsets.map(({ offset }, i) => (
-          <Model
-            key={i}
-            model={consolePart}
-            offset={offset}
-            color={color}
-            showAnchors
-          />
+          <Model key={i} model={consolePart} offset={offset} color={color} />
         ))}
 
         {/* Base boards */}
@@ -160,7 +148,7 @@ export default function Shelf({ levelCount, color }: ShelfProps) {
 
         {/* Levels */}
         {levelOffset.map((offset, i) => (
-          <Model key={i} model={levelPart} offset={offset} showAnchors />
+          <Model key={i} model={levelPart} offset={offset} />
         ))}
       </Suspense>
 
