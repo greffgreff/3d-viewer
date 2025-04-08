@@ -13,11 +13,19 @@ import {
 import { SkeletonUtils } from "three-stdlib";
 import type { NamedModel } from "./types/3d";
 
-interface ModelProps {
-  model: NamedModel;
-  showAnchors?: boolean;
-  color?: ColorRepresentation;
+interface Hoverable {
+  hoverable?: boolean;
   hoverColor?: ColorRepresentation;
+}
+
+interface AnchorProps {
+  showAnchors?: boolean;
+  anchorRadius?: number;
+}
+
+interface ModelProps extends AnchorProps, Hoverable {
+  model: NamedModel;
+  color?: ColorRepresentation;
   offset?: Vector3;
   rotate?: Vector3;
 }
@@ -25,7 +33,9 @@ interface ModelProps {
 export default function Model({
   model,
   showAnchors = false,
+  anchorRadius = 1,
   color = "#ffffff",
+  hoverable = false,
   hoverColor = "#ffcc00",
   offset = new Vector3(0, 0, 0),
   rotate = new Vector3(0, 0, 0),
@@ -43,7 +53,6 @@ export default function Model({
       if (obj instanceof Mesh) {
         const mesh = obj as Mesh;
 
-        // Clone material(s)
         if (mesh.material) {
           if (Array.isArray(mesh.material)) {
             mesh.material = mesh.material.map((m) => m.clone()) as Material[];
@@ -52,7 +61,11 @@ export default function Model({
           }
 
           if (!Array.isArray(mesh.material) && "color" in mesh.material) {
-            const baseColor = hovered ? hoverColor : color;
+            const baseColor = hoverable
+              ? hovered
+                ? hoverColor
+                : color
+              : color;
             (mesh.material as MeshStandardMaterial).color.set(baseColor);
           }
         }
@@ -76,7 +89,7 @@ export default function Model({
       {showAnchors &&
         Object.entries(model.anchors).map(([anchorName, point]) => (
           <mesh key={anchorName} position={point}>
-            <sphereGeometry args={[2, 16, 16]} />
+            <sphereGeometry args={[anchorRadius, 16, 16]} />
             <meshBasicMaterial color="aqua" />
           </mesh>
         ))}
