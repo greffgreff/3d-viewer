@@ -1,6 +1,6 @@
 {
   "leg": {
-    "path": "/models/voet_47.gltf",
+    "path": "/models/leg.gltf",
     "anchors": {
       "stand": [
         0,
@@ -10,32 +10,32 @@
     }
   },
   "back_panel": {
-    "path": "/models/achterwand_glad_47.gltf",
+    "path": "/models/back_panel.gltf",
     "anchors": {
       "bottom_left": [
-        50,
+        49,
         0,
         0
       ],
       "bottom_right": [
-        -50,
+        -49,
         0,
         0
       ],
       "top_left": [
-        50,
+        49,
         40,
         0
       ],
       "top_right": [
-        -50,
+        -49,
         40,
         0
       ]
     }
   },
   "stand": {
-    "path": "/models/staander_2010.gltf",
+    "path": "/models/stand.gltf",
     "anchors": {
       "console_49": [
         0,
@@ -305,7 +305,7 @@
     }
   },
   "console": {
-    "path": "/models/console_37.gltf",
+    "path": "/models/console.gltf",
     "anchors": {
       "stand": [
         0,
@@ -320,7 +320,7 @@
     }
   },
   "base_board": {
-    "path": "/models/plinten.gltf",
+    "path": "/models/base_board.gltf",
     "anchors": {
       "bottom_right": [
         50,
@@ -345,17 +345,17 @@
     }
   },
   "level": {
-    "path": "/models/legboard_37x100.gltf",
+    "path": "/models/shelf.gltf",
     "anchors": {
       "console_left": [
-        50,
-        1,
-        18.5
+        49,
+        2,
+        31
       ],
       "console_right": [
-        -50,
-        1,
-        18.5
+        -49,
+        2,
+        31
       ]
     }
   }

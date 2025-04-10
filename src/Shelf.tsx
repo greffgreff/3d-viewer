@@ -1,6 +1,5 @@
 import { useEffect, Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { ColorRepresentation, Vector3 } from "three";
 import { MODELS } from "./assets/models";
 import Model from "./Model";
@@ -116,43 +115,35 @@ export default function Shelf({ levelCount, color }: ShelfProps) {
   );
 
   return (
-    <Canvas orthographic camera={{ position: [45, 100, -150], zoom: 2 }}>
-      <ambientLight intensity={5} />
-      <directionalLight intensity={4} position={[5, 10, 10]} />
-      <directionalLight intensity={4} position={[5, 10, -10]} />
+    <Suspense fallback={null}>
+      {/* Back panels */}
+      {panelOffsets.map((offset, i) => (
+        <Model key={i} model={panelPart} offset={offset} color={color} />
+      ))}
 
-      <Suspense fallback={null}>
-        {/* Back panels */}
-        {panelOffsets.map((offset, i) => (
-          <Model key={i} model={panelPart} offset={offset} color={color} />
-        ))}
+      {/* Legs */}
+      <Model model={legPart} offset={leftLegOffset} color={color} />
+      <Model model={legPart} offset={rightLegOffset} color={color} />
 
-        {/* Legs */}
-        <Model model={legPart} offset={leftLegOffset} color={color} />
-        <Model model={legPart} offset={rightLegOffset} color={color} />
+      {/* Stands */}
+      <Model model={standPart} offset={leftStandOffset} color={color} />
+      <Model model={standPart} offset={rightStandOffset} color={color} />
 
-        {/* Stands */}
-        <Model model={standPart} offset={leftStandOffset} color={color} />
-        <Model model={standPart} offset={rightStandOffset} color={color} />
+      {/* Consoles */}
+      {leftConsoleOffsets.map(({ offset }, i) => (
+        <Model key={i} model={consolePart} offset={offset} color={color} />
+      ))}
+      {rightConsoleOffsets.map(({ offset }, i) => (
+        <Model key={i} model={consolePart} offset={offset} color={color} />
+      ))}
 
-        {/* Consoles */}
-        {leftConsoleOffsets.map(({ offset }, i) => (
-          <Model key={i} model={consolePart} offset={offset} color={color} />
-        ))}
-        {rightConsoleOffsets.map(({ offset }, i) => (
-          <Model key={i} model={consolePart} offset={offset} color={color} />
-        ))}
+      {/* Base boards */}
+      {/* <Model model={baseBoardPart} offset={backBaseBoard} /> */}
 
-        {/* Base boards */}
-        {/* <Model model={baseBoardPart} offset={backBaseBoard} /> */}
-
-        {/* Levels */}
-        {levelOffset.map((offset, i) => (
-          <Model key={i} model={levelPart} offset={offset} />
-        ))}
-      </Suspense>
-
-      <OrbitControls />
-    </Canvas>
+      {/* Levels */}
+      {levelOffset.map((offset, i) => (
+        <Model key={i} model={levelPart} offset={offset} />
+      ))}
+    </Suspense>
   );
 }
