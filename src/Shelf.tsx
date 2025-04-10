@@ -19,10 +19,10 @@ export default function Shelf({ levelCount, color }: ShelfProps) {
   const standPart = MODELS["stand"];
   const legPart = MODELS["leg"];
   const consolePart = MODELS["console"];
-  // const baseBoardPart = MODELS["base_board"];
+  const baseBoardPart = MODELS["base_board"];
   const levelPart = MODELS["level"];
 
-  // Panels
+  // Back panels
   const panelCount = 5;
 
   const panelOffsets: Vector3[] = [];
@@ -94,14 +94,23 @@ export default function Shelf({ levelCount, color }: ShelfProps) {
     new Vector3().subVectors(standPart.anchors["leg"], legPart.anchors["stand"])
   );
 
-  // Base boards
-  // const backBaseBoard = new Vector3().addVectors(
-  //   rightStandOffset,
-  //   new Vector3().addVectors(
-  //     baseBoardPart.anchors["bottom_left"],
-  //     standPart.anchors["bottom_base_board"]
-  //   )
-  // );
+  // Base level
+  const baseLevelOffset = new Vector3().addVectors(
+    leftLegOffset,
+    new Vector3().subVectors(
+      legPart.anchors["level"],
+      levelPart.anchors["console_left"]
+    )
+  );
+
+  // Base board
+  const baseBoardOffset = new Vector3().addVectors(
+    leftLegOffset,
+    new Vector3().subVectors(
+      legPart.anchors["base_board"],
+      baseBoardPart.anchors["top_right"]
+    )
+  );
 
   // Levels
   const levelOffset = leftConsoleOffsets.map(({ offset, consolePart }) =>
@@ -137,8 +146,11 @@ export default function Shelf({ levelCount, color }: ShelfProps) {
         <Model key={i} model={consolePart} offset={offset} color={color} />
       ))}
 
-      {/* Base boards */}
-      {/* <Model model={baseBoardPart} offset={backBaseBoard} /> */}
+      {/* Base level */}
+      <Model model={levelPart} offset={baseLevelOffset} />
+
+      {/* Base board */}
+      <Model model={baseBoardPart} offset={baseBoardOffset} />
 
       {/* Levels */}
       {levelOffset.map((offset, i) => (

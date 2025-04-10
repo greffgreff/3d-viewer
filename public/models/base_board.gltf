@@ -1,1 +1,189 @@
-{"extensionsUsed" : ["KHR_node_visibility"], "accessors" : [{"bufferView" : 0, "byteOffset" : 0, "componentType" : 5123, "count" : 36, "type" : "SCALAR", "max" : [23], "min" : [0]}, {"bufferView" : 1, "byteOffset" : 0, "componentType" : 5126, "count" : 24, "type" : "VEC3", "max" : [47.05218505859375, -1.283908724784851, 0.5], "min" : [-47.022552490234375, -8, -0.5], "name" : "POSITION"}, {"bufferView" : 1, "byteOffset" : 12, "componentType" : 5126, "count" : 24, "type" : "VEC3", "max" : [1.0000042915344238, 1.0000042915344238, 1.0000042915344238], "min" : [-1.0000042915344238, -1.0000042915344238, -1.0000042915344238], "name" : "NORMAL"}, {"bufferView" : 1, "byteOffset" : 24, "componentType" : 5126, "count" : 24, "type" : "VEC2", "max" : [1, 3], "min" : [0, 2], "name" : "TEXCOORD_0"}], "asset" : {"generator" : "Aspose.3D 25.3.0", "version" : "2.0"}, "buffers" : [{"uri" : "data:application/octet-stream;base64,AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAAQASAAIABAATAAUABwAUAAgACgAVAAsADQAWAA4AEAAXABEAAAAAAHA1PEIAAADBAAAAvwAAAAAkAIC/AAAAAAAAgD8AAEBAcDU8QgAAAMEAAAA/AAAAACQAgL8AAAAAAACAPwAAAEAYFzzCAAAAwQAAAL8AAAAAJACAvwAAAAAAAAAAAABAQHA1PEIfV6S/AAAAPwAAAAAkAIA/AAAAAAAAgD8AAEBAcDU8Qh9XpL8AAAC/AAAAACQAgD8AAAAAAACAPwAAAEAYFzzCH1ekvwAAAD8AAAAAJACAPwAAAAAAAAAAAABAQBgXPMIAAADBAAAAPyQAgL8AAAAAAAAAAAAAgD8AAEBAGBc8wh9XpL8AAAA/JACAvwAAAAAAAAAAAACAPwAAAEAYFzzCAAAAwQAAAL8kAIC/AAAAAAAAAAAAAAAAAABAQBgXPMIAAADBAAAAvwAAAAAAAAAAJACAvwAAgD8AAEBAGBc8wh9XpL8AAAC/AAAAAAAAAAAkAIC/AACAPwAAAEBwNTxCAAAAwQAAAL8AAAAAAAAAACQAgL8AAAAAAABAQHA1PEIAAADBAAAAvyQAgD8AAAAAAAAAAAAAgD8AAEBAcDU8Qh9XpL8AAAC/JACAPwAAAAAAAAAAAACAPwAAAEBwNTxCAAAAwQAAAD8kAIA/AAAAAAAAAAAAAAAAAABAQHA1PEIAAADBAAAAPwAAAAAAAAAAJACAPwAAgD8AAEBAcDU8Qh9XpL8AAAA/AAAAAAAAAAAkAIA/AACAPwAAAEAYFzzCAAAAwQAAAD8AAAAAAAAAACQAgD8AAAAAAABAQBgXPMIAAADBAAAAPwAAAAAkAIC/AAAAAAAAAAAAAABAGBc8wh9XpL8AAAC/AAAAACQAgD8AAAAAAAAAAAAAAEAYFzzCH1ekvwAAAL8kAIC/AAAAAAAAAAAAAAAAAAAAQHA1PEIfV6S/AAAAvwAAAAAAAAAAJACAvwAAAAAAAABAcDU8Qh9XpL8AAAA/JACAPwAAAAAAAAAAAAAAAAAAAEAYFzzCH1ekvwAAAD8AAAAAAAAAACQAgD8AAAAAAAAAQAAAAAA=", "byteLength" : 848}], "bufferViews" : [{"buffer" : 0, "byteOffset" : 0, "byteLength" : 72, "target" : 34963}, {"buffer" : 0, "byteOffset" : 76, "byteLength" : 768, "byteStride" : 32, "target" : 34962}], "materials" : [{"name" : "", "pbrMetallicRoughness" : {"baseColorFactor" : [1, 1, 1, 1], "metallicFactor" : 1, "roughnessFactor" : 1}, "emissiveFactor" : [0, 0, 0], "alphaMode" : "OPAQUE", "doubleSided" : true}], "meshes" : [{"primitives" : [{"attributes" : {"POSITION" : 1, "NORMAL" : 2, "TEXCOORD_0" : 3}, "indices" : 0, "material" : 0, "mode" : 4}]}], "nodes" : [{"mesh" : 0, "name" : "plint", "extensions" : {"KHR_node_visibility" : {"visible" : true}}}, {"children" : [0], "matrix" : [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.17971962690353394, 14.47195816040039, 4.440115451812744, 1], "name" : "winkel stelling ", "extensions" : {"KHR_node_visibility" : {"visible" : true}}}], "scene" : 0, "scenes" : [{"nodes" : [1]}]}
+{
+  "asset": {
+    "generator": "Aspose.3D 25.3.0",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "data:application/octet-stream;base64,cDU8QgAAAMEAAAC/AAAAACUAgL8AAAAAAACAPwAAAEBwNTxCAAAAwQAAAD8AAAAAJQCAvwAAAAAAAIA/AACAPxgXPMIAAADBAAAAvwAAAAAlAIC/AAAAAAAAAAAAAABAcDU8Qh9XpL8AAAA/AAAAACUAgD8AAAAAAACAPwAAAEBwNTxCH1ekvwAAAL8AAAAAJQCAPwAAAAAAAIA/AACAPxgXPMIfV6S/AAAAPwAAAAAlAIA/AAAAAAAAAAAAAABAGBc8wgAAAMEAAAA/JQCAvwAAAAAAAAAAAACAPwAAAEAYFzzCH1ekvwAAAD8lAIC/AAAAAAAAAAAAAIA/AACAPxgXPMIAAADBAAAAvyUAgL8AAAAAAAAAAAAAAAAAAABAGBc8wgAAAMEAAAC/AAAAAAAAAAAlAIC/AACAPwAAAEAYFzzCH1ekvwAAAL8AAAAAAAAAACUAgL8AAIA/AACAP3A1PEIAAADBAAAAvwAAAAAAAAAAJQCAvwAAAAAAAABAcDU8QgAAAMEAAAC/JQCAPwAAAAAAAAAAAACAPwAAAEBwNTxCH1ekvwAAAL8lAIA/AAAAAAAAAAAAAIA/AACAP3A1PEIAAADBAAAAPyUAgD8AAAAAAAAAAAAAAAAAAABAcDU8QgAAAMEAAAA/AAAAAAAAAAAlAIA/AACAPwAAAEBwNTxCH1ekvwAAAD8AAAAAAAAAACUAgD8AAIA/AACAPxgXPMIAAADBAAAAPwAAAAAAAAAAJQCAPwAAAAAAAABAGBc8wgAAAMEAAAA/AAAAACUAgL8AAAAAAAAAAAAAgD8YFzzCH1ekvwAAAL8AAAAAJQCAPwAAAAAAAAAAAACAPxgXPMIfV6S/AAAAvyUAgL8AAAAAAAAAAAAAAAAAAIA/cDU8Qh9XpL8AAAC/AAAAAAAAAAAlAIC/AAAAAAAAgD9wNTxCH1ekvwAAAD8lAIA/AAAAAAAAAAAAAAAAAACAPxgXPMIfV6S/AAAAPwAAAAAAAAAAJQCAPwAAAAAAAIA/AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAAQASAAIABAATAAUABwAUAAgACgAVAAsADQAWAA4AEAAXABEA",
+      "byteLength": 840
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 768,
+      "byteStride": 32,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 768,
+      "byteLength": 72,
+      "target": 34963
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 24,
+      "min": [
+        -47.022552490234375,
+        -8,
+        -0.5
+      ],
+      "max": [
+        47.05218505859375,
+        -1.283908724784851,
+        0.5
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 12,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 24,
+      "min": [
+        -1.0000044107437134,
+        -1.0000044107437134,
+        -1.0000044107437134
+      ],
+      "max": [
+        1.0000044107437134,
+        1.0000044107437134,
+        1.0000044107437134
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 24,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 24,
+      "min": [
+        0,
+        1
+      ],
+      "max": [
+        1,
+        2
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 0,
+      "componentType": 5123,
+      "normalized": false,
+      "count": 36,
+      "min": [
+        0
+      ],
+      "max": [
+        23
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        1
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "plint",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0.17971962690353394,
+        -6.471958160400391,
+        -4.440115451812744,
+        1
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "winkel stelling ",
+      "children": [
+        0
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        -0.17971962690353394,
+        14.47195816040039,
+        4.440115451812744,
+        1
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "material": 0,
+          "mode": 4,
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 1
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "doubleSided": true
+    }
+  ]
+}

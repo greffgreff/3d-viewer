@@ -12,7 +12,7 @@ export default function App() {
       <directionalLight intensity={4} position={[5, 10, 10]} />
       <directionalLight intensity={4} position={[5, 10, -10]} />
 
-      <Shelf levelCount={7} color="white" />
+      <Shelf levelCount={8} color="white" />
     </Canvas>
   );
 }

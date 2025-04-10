@@ -4,8 +4,18 @@
     "anchors": {
       "stand": [
         0,
-        1,
-        23.5
+        -2,
+        22.5
+      ],
+      "level": [
+        0,
+        5.5,
+        22.5
+      ],
+      "base_board": [
+        0,
+        4,
+        -23
       ]
     }
   },
@@ -13,22 +23,22 @@
     "path": "/models/back_panel.gltf",
     "anchors": {
       "bottom_left": [
-        49,
+        48.5,
         0,
         0
       ],
       "bottom_right": [
-        -49,
+        -48.5,
         0,
         0
       ],
       "top_left": [
-        49,
+        48.5,
         40,
         0
       ],
       "top_right": [
-        -49,
+        -48.5,
         40,
         0
       ]
@@ -289,18 +299,13 @@
       ],
       "leg": [
         0,
-        0,
-        -3
+        1,
+        -4
       ],
       "bottom_back_panel": [
         0,
-        10,
-        3
-      ],
-      "bottom_base_board": [
-        0,
-        0,
-        3
+        10.7,
+        -2
       ]
     }
   },
@@ -310,7 +315,7 @@
       "stand": [
         0,
         7.5,
-        20.5
+        21.5
       ],
       "level": [
         0,
@@ -323,23 +328,23 @@
     "path": "/models/base_board.gltf",
     "anchors": {
       "bottom_right": [
-        50,
+        48.25,
         0,
         0
       ],
       "bottom_left": [
-        -50,
+        -48.25,
         0,
         0
       ],
       "top_right": [
-        50,
-        16,
+        48.25,
+        6.75,
         0
       ],
       "top_left": [
-        -50,
-        16,
+        -48.25,
+        6.75,
         0
       ]
     }
@@ -348,12 +353,12 @@
     "path": "/models/shelf.gltf",
     "anchors": {
       "console_left": [
-        49,
+        48.5,
         2,
         31
       ],
       "console_right": [
-        -49,
+        -48.5,
         2,
         31
       ]
